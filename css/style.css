@@ -1,0 +1,930 @@
+:root {
+  --bg: #ffffff;
+  --txt: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  background-color: var(--bg);
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 600ms ease;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.hideForum {
+  display: none;
+}
+
+.reserve {
+  z-index: 2;
+  border-radius: 5px;
+  position: fixed;
+  background-color: var(--bg);
+  max-width: 900px;
+  min-width: 200px;
+  height: 480px;
+  padding: 50px;
+  animation: display-forum 2000ms;
+}
+.reserve__close {
+  display: block;
+  text-align: right;
+  color: var(--txt);
+}
+.reserve__h2 {
+  text-align: center;
+  color: rgb(222, 129, 7);
+  font-family: "Dancing Script";
+  font-size: 50px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.reserve__input {
+  padding: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  width: 200px;
+  margin: 20px;
+  border-width: 1px;
+  border-bottom: 1px solid #000;
+}
+.reserve__inputRequest {
+  padding: 15px;
+  padding-bottom: 100px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  width: 760px;
+  border-width: 1px;
+  margin: 20px;
+}
+.reserve__Button {
+  color: var(--txt);
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: 795px;
+  margin: 20px;
+  height: 50px;
+  background-color: rgb(222, 129, 7);
+}
+
+@keyframes display-forum {
+  0% {
+    transform: translateX(1200px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.hide {
+  display: none;
+}
+
+.nav {
+  z-index: 2;
+  color: var(--txt);
+  width: 100%;
+  background-color: var(--bg);
+  height: 50px;
+  position: fixed;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.nav__button {
+  display: none;
+  color: var(--txt);
+  cursor: pointer;
+  transition: transform 300ms;
+}
+.nav__button:active {
+  transform: scale(1.05);
+}
+.nav__mobile {
+  background-color: var(--bg);
+  width: 100%;
+  text-align: center;
+  height: 220px;
+  padding-top: 5px;
+}
+.nav__mobile__navbar {
+  margin-top: -12px;
+  list-style: none;
+}
+.nav__mobile__navbar li {
+  margin: 25px;
+}
+.nav__mobile__navbar a {
+  text-decoration: none;
+  color: var(--txt);
+}
+.nav__logo {
+  display: inline;
+  font-weight: bold;
+  font-size: 50px;
+  margin-left: 60px;
+  font-family: "Dancing Script", "Times New Roman", Times, serif;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+.nav__logo__letters {
+  color: rgb(222, 129, 7);
+}
+.nav .nav__navbar {
+  position: absolute;
+  right: 50px;
+  top: 32px;
+  list-style: none;
+  text-align: right;
+}
+.nav .nav__navbar__reserve {
+  background-color: rgb(222, 129, 7);
+  padding: 8px;
+  border-radius: 3px;
+  transform: scale(1);
+  transition: all 300ms;
+  transform-origin: 0% 50%;
+}
+.nav .nav__navbar__reserve:hover {
+  box-shadow: 0 0 2px rgb(222, 129, 7), 0 0 10px rgb(222, 129, 7), 0 0 20px rgb(222, 129, 7);
+}
+.nav .nav__navbar #switch i {
+  transform: rotate(-360deg);
+  transition: transform 600ms ease-in-out;
+}
+.nav .nav__navbar #switch i:hover {
+  transform: rotate(0deg);
+}
+.nav .nav__navbar__navs {
+  position: relative;
+}
+.nav .nav__navbar__navs::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(222, 129, 7);
+  height: 3px;
+  width: 0%;
+  left: 0%;
+  top: 18px;
+  transition: 300ms;
+}
+.nav .nav__navbar__navs:hover::after {
+  width: 100%;
+}
+.nav .nav__navbar li {
+  display: inline;
+  margin: 30px;
+}
+.nav .nav__navbar li a {
+  text-decoration: none;
+  color: var(--txt);
+}
+
+.head {
+  position: relative;
+  height: 800px;
+  color: #ffffff;
+}
+.head::before {
+  content: "";
+  background-image: url("../img/pexels-rachel-claire-5864588.jpg");
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1; /* Adjust the opacity as needed */
+}
+.head__container {
+  position: relative;
+  top: 230px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.head__container__h2 {
+  font-size: 40px;
+  font-weight: lighter;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  animation-name: display-head-h2;
+  animation-duration: 1000ms;
+  animation-delay: 600ms;
+  transform-origin: left;
+  animation-fill-mode: both;
+}
+.head__container__h1 {
+  font-size: 50px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  animation: display-head-h1 1000ms;
+  animation-delay: 600ms;
+  transform-origin: right;
+  animation-fill-mode: both;
+}
+.head__container__btn {
+  font-family: "Dancing Script";
+  padding: 10px;
+  width: 300px;
+  height: 80px;
+  font-size: 30px;
+  background-color: rgb(222, 129, 7);
+  font-weight: bolder;
+  margin-top: 20px;
+  animation: display-head-btn 1000ms;
+  animation-delay: 600ms;
+  cursor: pointer;
+  animation-fill-mode: both;
+  transition: all 300ms;
+}
+.head__container__btn:hover {
+  box-shadow: 0 0 5px rgb(222, 129, 7), 0 0 20px rgb(222, 129, 7), 0 0 40px rgb(222, 129, 7);
+}
+.head__container__btn:active {
+  transform: scale(1.05);
+}
+.head__container hr {
+  width: 600px;
+  border: 2px solid white;
+  border-radius: 20px;
+  animation: display-head-hr 1000ms;
+  animation-delay: 600ms;
+  transform-origin: left;
+  animation-fill-mode: both;
+}
+
+@keyframes display-head-h2 {
+  0% {
+    transform: scaleX(0%);
+  }
+  100% {
+    transform: scaleX(100%);
+  }
+}
+@keyframes display-head-h1 {
+  0% {
+    transform: scaleX(0%);
+  }
+  100% {
+    transform: scaleX(100%);
+  }
+}
+@keyframes display-head-hr {
+  0% {
+    transform: scaleX(0%);
+  }
+  100% {
+    transform: scaleX(100%);
+  }
+}
+@keyframes display-head-btn {
+  0% {
+    transform: scaleX(0%);
+  }
+  100% {
+    transform: scaleX(100%);
+  }
+}
+.about {
+  padding-top: 70px;
+  background-color: var(--bg);
+  text-align: center;
+  color: var(--txt);
+}
+.about__h2 {
+  color: rgb(222, 129, 7);
+  font-family: "Dancing Script";
+  font-size: 45px;
+}
+.about__h1 {
+  font-size: 40px;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+.about__p {
+  max-width: 800px;
+  min-width: 300px;
+  margin: 50px auto;
+  font-size: 30px;
+  font-family: "Dancing Script";
+}
+.about__icon1 {
+  margin-right: 150px;
+  color: rgb(222, 129, 7);
+}
+.about__icon2 {
+  color: rgb(222, 129, 7);
+}
+.about__container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+.about__container__history {
+  width: 300px;
+}
+.about__container__history__date {
+  color: rgb(222, 129, 7);
+  font-family: "Dancing Script";
+}
+.about__container__history__title {
+  font-weight: 750;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.about__container__history__paragraph {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: lighter;
+}
+
+.recipes {
+  position: relative;
+  margin-top: 100px;
+  height: 640px;
+}
+.recipes::before {
+  content: "";
+  background-image: url("../img/pexels-rajesh-tp-1603899.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9; /* Adjust the opacity as needed */
+}
+.recipes__title {
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+  top: 200px;
+}
+.recipes__title__h2 {
+  color: rgb(222, 129, 7);
+  font-family: "Dancing Script";
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: -30px;
+}
+.recipes__title__h1 {
+  text-align: center;
+  font-size: 80px;
+  font-family: "Dancing Script";
+}
+
+.categories {
+  padding-top: 100px;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+.categories__container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+.categories__container__item {
+  margin: 30px 0px 30px;
+  max-width: 400px;
+  min-width: 300px;
+}
+.categories__container__item__img {
+  max-width: 400px;
+  min-width: 300px;
+  height: 200px;
+  margin-bottom: -3px;
+}
+.categories__container__item__h2 {
+  color: rgb(222, 129, 7);
+  font-family: "Dancing Script";
+  font-size: 40px;
+  margin-bottom: -30px;
+}
+.categories__container__item__h1 {
+  font-family: "Dancing Script";
+  font-size: 50px;
+  margin-bottom: -1px;
+}
+.categories__container__item__p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: lighter;
+}
+
+.menu {
+  position: relative;
+  margin-top: 100px;
+  height: 600px;
+}
+.menu::before {
+  content: "";
+  background-image: url("../img/pexels-burak-the-weekender-735869.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9; /* Adjust the opacity as needed */
+}
+.menu__container {
+  position: relative;
+  color: white;
+  text-align: center;
+  top: 200px;
+}
+.menu__container__h2 {
+  color: rgb(222, 129, 7);
+  font-family: "Dancing Script";
+  font-size: 65px;
+  text-align: center;
+  margin-bottom: -30px;
+}
+.menu__container__h1 {
+  text-align: center;
+  font-size: 85px;
+  font-family: "Dancing Script";
+}
+
+.linkActive {
+  color: rgb(222, 129, 7);
+}
+
+.hide {
+  display: none;
+}
+
+#menuPage {
+  background-color: rgb(222, 129, 7);
+  animation: open-Menu 1000ms;
+}
+
+@keyframes display-Menu-Title {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes open-Menu {
+  0% {
+    background-color: #ffffff;
+  }
+  100% {
+    background-color: rgb(222, 129, 7);
+  }
+}
+.Container__h1 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  animation: display-Menu-Title 1000ms;
+  transform-origin: 0% 50%;
+  animation-fill-mode: both;
+  animation-delay: 1000ms;
+  font-weight: bolder;
+}
+.Container__h1__brand {
+  font-family: "Dancing Script";
+  color: #ffffff;
+  font-size: 45px;
+}
+.Container hr {
+  width: 600px;
+  border-width: 3px;
+  animation: display-Menu-Title 1000ms;
+  transform-origin: 0% 50%;
+  animation-fill-mode: both;
+  animation-delay: 1600ms;
+}
+.Container__menuContainer {
+  color: var(--txt);
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  justify-content: space-around;
+}
+.Container__menuContainer__column {
+  animation: display-Menu-Title 1000ms;
+  transform-origin: 0% 50%;
+  animation-fill-mode: both;
+  animation-delay: 1600ms;
+}
+.Container__menuContainer__column__h2 {
+  text-align: center;
+  font-family: "Dancing Script";
+  font-size: 30px;
+  font-weight: lighter;
+  color: #ffffff;
+}
+.Container__menuContainer__column__row {
+  margin: 20px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Container__menuContainer__column__row img {
+  width: 100px;
+  border-radius: 50%;
+}
+.Container__menuContainer__column__row__dcp {
+  text-align: center;
+}
+.Container__menuContainer__column__row__price {
+  color: #ffffff;
+  font-family: "Dancing Script";
+  font-size: 20px;
+}
+
+.menus {
+  margin-top: 70px;
+  width: 100%;
+  background-color: var(--bg);
+  color: var(--txt);
+}
+.menus__nav {
+  list-style: none;
+  text-align: center;
+}
+.menus__nav__items {
+  display: inline;
+  margin: 50px;
+  font-family: "Dancing Script";
+  font-size: 32px;
+  color: var(--txt);
+}
+.menus__nav__items a {
+  color: var(--txt);
+  text-decoration: none;
+}
+.menus__nav__items a:hover {
+  color: rgb(222, 129, 7);
+}
+.menus__container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+.menus__container .lunch {
+  animation: display-lunch 1000ms;
+}
+.menus__container .dinner {
+  animation: display-lunch 1000ms;
+}
+.menus__container .dessert {
+  animation: display-lunch 1000ms;
+}
+.menus__container .drinks {
+  animation: display-lunch 1000ms;
+}
+.menus__container__item {
+  max-width: 400px;
+  min-width: 300px;
+  margin: 30px 0px 30px;
+}
+.menus__container__item__img {
+  max-width: 400px;
+  min-width: 300px;
+  height: 200px;
+}
+.menus__container__item__h2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+}
+.menus__container__item__price {
+  color: rgb(222, 129, 7);
+  font-family: "Dancing Script";
+}
+.menus__container__item__p {
+  font-weight: lighter;
+  color: rgb(115, 110, 110);
+}
+.menus__btn {
+  margin: 30px auto;
+  display: block;
+  padding: 15px;
+  padding-bottom: 50px;
+  width: 280px;
+  height: 60px;
+  font-size: 30px;
+  background-color: rgb(222, 129, 7);
+  color: var(--txt);
+  font-family: "Dancing Script";
+  font-weight: bolder;
+  border-radius: 5px;
+  transition: all 300ms;
+  cursor: pointer;
+}
+.menus__btn:hover {
+  box-shadow: 0 0 5px rgb(222, 129, 7), 0 0 20px rgb(222, 129, 7), 0 0 40px rgb(222, 129, 7);
+}
+.menus__btn:active {
+  transform: scale(1.05);
+}
+
+@keyframes display-lunch {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes display-dinner {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes display-dessert {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes display-drinks {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.team {
+  position: relative;
+  margin-top: 100px;
+  height: 650px;
+}
+.team::before {
+  content: "";
+  background-image: url("../img/pexels-taha-samet-arslan-7627422.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9; /* Adjust the opacity as needed */
+}
+.team__container {
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+  top: 200px;
+}
+.team__container__h2 {
+  color: rgb(222, 129, 7);
+  font-family: "Dancing Script";
+  font-size: 65px;
+  text-align: center;
+  margin-bottom: -30px;
+}
+.team__container__h1 {
+  text-align: center;
+  font-size: 85px;
+  font-family: "Dancing Script";
+}
+
+.chefs {
+  background-color: var(--bg);
+}
+.chefs__container {
+  display: flex;
+  padding: 40px;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+.chefs__container__member {
+  font-family: "Dancing Script";
+  margin-top: 50px;
+  width: 300px;
+}
+.chefs__container__member__imageContainer {
+  position: relative;
+}
+.chefs__container__member__imageContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.chefs__container__member__imageContainer__text {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  overflow: hidden;
+  position: absolute;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: 95%;
+  top: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.chefs__container__member__imageContainer__text ul {
+  list-style: none;
+  margin-right: 50px;
+}
+.chefs__container__member__imageContainer__text ul li {
+  display: inline;
+  padding: 10px;
+}
+.chefs__container__member__imageContainer__text ul li a {
+  color: #ffffff;
+}
+.chefs__container__member__imageContainer__text p {
+  width: 80%;
+}
+.chefs__container__member h2 {
+  text-align: center;
+  color: var(--txt);
+  font-weight: bolder;
+  font-size: 40px;
+  margin-top: 5px;
+}
+.chefs__container__member h3 {
+  margin-top: -20px;
+  text-align: center;
+  color: rgb(222, 129, 7);
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.chefs__container__member__imageContainer:hover .chefs__container__member__imageContainer__text {
+  backdrop-filter: blur(2px);
+  display: flex;
+}
+
+.footer {
+  margin-top: 100px;
+  height: 100%;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+  background-color: #1f1c1c;
+  color: #ffffff;
+  padding-bottom: 20px;
+}
+.footer__copy {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.footer__container {
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+.footer__container__social__h2 {
+  width: 100%;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.footer__container__social__media {
+  margin-top: 40px;
+  margin-left: -30px;
+  list-style: none;
+}
+.footer__container__social__media__link {
+  margin-right: 10px;
+  padding: 15px;
+  border: 2px solid white;
+  display: inline;
+  cursor: pointer;
+}
+.footer__container__social__media__link:hover {
+  background-color: rgb(222, 129, 7);
+}
+.footer__container__dcp {
+  max-width: 400px;
+  min-width: 200px;
+  color: #ffffff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.footer__container__dcp__h2 {
+  text-align: center;
+}
+.footer__container__dcp__h2 span {
+  color: rgb(222, 129, 7);
+}
+.footer__container__dcp__p {
+  text-align: center;
+  font-weight: lighter;
+  color: rgb(160, 160, 160);
+}
+.footer__container__sub {
+  color: #ffffff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.footer__container__sub__h2 {
+  text-align: center;
+}
+.footer__container__sub__form input {
+  width: 150px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 17px;
+  padding: 8px;
+  padding-left: 15px;
+}
+.footer__container__sub__form__btn {
+  position: relative;
+  height: 39px;
+  right: 6px;
+  top: -1px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(222, 129, 7);
+  width: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  .reserve {
+    width: 230px;
+    height: 450px;
+    animation-duration: 700ms;
+  }
+  .reserve__h2 {
+    font-size: 40px;
+    margin-top: -20px;
+  }
+  .reserve__close {
+    position: relative;
+    right: -30px;
+    top: -30px;
+  }
+  .reserve__input {
+    margin: 5px auto;
+    height: 5px;
+  }
+  .reserve__inputRequest {
+    margin: 5px auto;
+    width: 200px;
+    height: 50px;
+    padding-bottom: 30px;
+  }
+  .reserve__Button {
+    width: 235px;
+    margin: 5px auto;
+  }
+  @keyframes display-forum {
+    0% {
+      transform: translateX(700px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  .nav__logo {
+    margin-left: 20px;
+  }
+  .nav__navbar {
+    display: none;
+  }
+  .nav__button {
+    display: inline;
+    position: absolute;
+    top: 45px;
+    right: 30px;
+  }
+  .head {
+    height: 700px;
+  }
+  .head__container {
+    top: 200px;
+  }
+  .head__container__h2 {
+    font-size: 35px;
+  }
+  .head__container__h1 {
+    font-size: 40px;
+  }
+  .head__container hr {
+    width: 200px;
+  }
+  .chefs__container__member__imageContainer:active .chefs__container__member__imageContainer__text {
+    backdrop-filter: blur(2px);
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
